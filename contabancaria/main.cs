@@ -25,6 +25,7 @@ class HelloWorld {
     Console.WriteLine("\nDigite o seu CPF:");
     cliente1.setCpf = Console.ReadLine();
     
+    
     Console.WriteLine("\nDigite o seu nome:");
     cliente1.setName = Console.ReadLine();
     
