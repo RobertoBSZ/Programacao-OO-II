@@ -30,10 +30,10 @@ class HelloWorld {
     cliente1.setName = Console.ReadLine();
     
     Console.WriteLine("\nConfirmação de suas informações\n");
-    Console.WriteLine("CPF: " + cliente1.GetCpf());
-    Console.WriteLine("Nome: " + cliente1.GetName());
+    Console.WriteLine("CPF: " + cliente1.Cpf);
+    Console.WriteLine("Nome: " + cliente1.Name);
     
-    Console.WriteLine("\nSeu saldo inicial é de R$1000,00\n");
+    Console.WriteLine("\nOlá " + cliente1.Name + ", Inscrito no CPF" +cliente1.Cpf + ", Seu saldo inicial é de R$1000,00\n");
     
     
     while(opcao_menu == true){
