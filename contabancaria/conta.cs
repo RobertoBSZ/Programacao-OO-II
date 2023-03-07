@@ -47,6 +47,10 @@ class Conta{
             this.extrato.Add("Saque de R"+ a.ToString("C") + " mal-sucedido");
             Console.WriteLine("Você possui saldo insuficiente. Saque mal-sucedido.\n");
             return this.Saldo;
+        }else if(a <= 0){
+            this.extrato.Add("Saque de R"+ a.ToString("C") + " mal-sucedido");
+            Console.WriteLine("Valor inválido para saque. Saque mal-sucedido.\n");
+            return this.Saldo;
         }
         else{
             this.extrato.Add("Saque de R"+ a.ToString("C") + " realizado com sucesso!");

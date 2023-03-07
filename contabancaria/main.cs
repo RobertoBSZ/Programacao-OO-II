@@ -18,24 +18,48 @@ class HelloWorld {
   static void Main() {
      
     Boolean opcao_menu = true;
+    Boolean opcao_confirm = true;
+    Boolean opcao_confirm2 = true;
     Conta cliente1 = new Conta();
-    int operacaouser;
+    int operacaouser, user_confirm;
     
     Console.WriteLine("Sistema Bancário\n");
     Console.WriteLine("Criação de Conta\n");
-    Console.WriteLine("Cadastro de informações pessoais");
-    Console.WriteLine("\nDigite o seu CPF:");
-    cliente1.GetSetCpf = Console.ReadLine();
-    Console.Clear();
+    Console.WriteLine("Cadastro de informações pessoais\n");
     
+    while(opcao_confirm == true){
+        opcao_confirm2 = true;
+        Console.WriteLine("Digite o seu CPF:");
+        cliente1.GetSetCpf = Console.ReadLine();
+        Console.Clear();
+        
+        
+        Console.WriteLine("Digite o seu nome:");
+        cliente1.GetSetName = Console.ReadLine();
+        Console.Clear();
+        
+        Console.WriteLine("Confirmação de suas informações\n");
+        Console.WriteLine("CPF: " + cliente1.Cpf);
+        Console.WriteLine("Nome: " + cliente1.Name + "\n");
+        
+        while (opcao_confirm2 == true){
+            Console.WriteLine("Você confirma essas informações?\n1- Sim\n2- Não");
+            user_confirm = Convert.ToInt32(Console.ReadLine());
+            Console.Clear();
+            
+            if(user_confirm == 2){
+                Console.WriteLine("Repita o processo!");
+                opcao_confirm2 = false;
+            }else if(user_confirm == 1){
+                opcao_confirm = false;
+                opcao_confirm2 = false;
+            }else{
+                Console.WriteLine("Escolha uma opção válida.");
+            }
+        }
+        
+    }
     
-    Console.WriteLine("Digite o seu nome:");
-    cliente1.GetSetName = Console.ReadLine();
-    Console.Clear();
-    
-    Console.WriteLine("\nConfirmação de suas informações\n");
-    Console.WriteLine("CPF: " + cliente1.Cpf);
-    Console.WriteLine("Nome: " + cliente1.Name);
     
     Console.WriteLine("\nOlá " + cliente1.Name + ", inscrito no CPF " + cliente1.Cpf + ", seu saldo inicial é de R" + cliente1.Saldo.ToString("C") + ".");
     
@@ -52,11 +76,11 @@ class HelloWorld {
         else{
             switch(operacaouser){
             case 1:
-                Console.WriteLine("\nSaldo atual: R" + cliente1.GetSaldo().ToString("C"));
+                Console.WriteLine("Saldo atual: R" + cliente1.GetSaldo().ToString("C"));
                 break;
             case 2:
                 double x;
-                Console.WriteLine("\nQuanto você quer sacar?");
+                Console.WriteLine("Quanto você quer sacar?");
                 x = Convert.ToDouble(Console.ReadLine());
                 cliente1.Sacar(x);
                 
@@ -64,7 +88,7 @@ class HelloWorld {
                 break;
             case 3:
                 double y;
-                Console.WriteLine("\nQuanto você quer depositar?");
+                Console.WriteLine("Quanto você quer depositar?");
                 y = Convert.ToDouble(Console.ReadLine());
                 cliente1.Depositar(y);
                 
@@ -76,7 +100,7 @@ class HelloWorld {
                 cliente1.Extrato_Bancario();
                 break;
             case 5:
-                Console.WriteLine("\nVocê escolheu sair. Saindo...");
+                Console.WriteLine("Você escolheu sair. Saindo...");
                 opcao_menu = false;
                 break;
             }       
