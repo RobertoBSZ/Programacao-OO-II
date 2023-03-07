@@ -61,11 +61,11 @@ class HelloWorld {
     }
     
     
-    Console.WriteLine("\nOlá " + cliente1.Name + ", inscrito no CPF " + cliente1.Cpf + ", seu saldo inicial é de R" + cliente1.Saldo.ToString("C") + ".");
+    Console.WriteLine("Olá " + cliente1.Name + ", inscrito no CPF " + cliente1.Cpf + ", seu saldo inicial é de R" + cliente1.Saldo.ToString("C") + ".\n");
     
     
     while(opcao_menu == true){
-        Console.WriteLine("\nEscolha sua operação bancária:\n1-Consultar\n2-Sacar\n3-Depositar\n4-Extrato\n5-Sair");
+        Console.WriteLine("Escolha sua operação bancária:\n1-Consultar\n2-Sacar\n3-Depositar\n4-Extrato\n5-Sair");
         Console.WriteLine("\nSua escolha:");
         operacaouser = Convert.ToInt32(Console.ReadLine());
         Console.Clear();
@@ -82,6 +82,7 @@ class HelloWorld {
                 double x;
                 Console.WriteLine("Quanto você quer sacar?");
                 x = Convert.ToDouble(Console.ReadLine());
+                Console.Clear();
                 cliente1.Sacar(x);
                 
                 Console.WriteLine("Saldo atual: R" + cliente1.GetSaldo().ToString("C"));
@@ -90,14 +91,28 @@ class HelloWorld {
                 double y;
                 Console.WriteLine("Quanto você quer depositar?");
                 y = Convert.ToDouble(Console.ReadLine());
+                Console.Clear();
                 cliente1.Depositar(y);
                 
                 Console.WriteLine("Saldo atual: R" + cliente1.GetSaldo().ToString("C"));
                 break;
             
             case 4:
+                double z;
+                Boolean w = true;
                 Console.WriteLine("Transações realizadas:\n");
                 cliente1.Extrato_Bancario();
+                
+                while(w == true){
+                    Console.WriteLine("\nPressione 1 para continuar!");
+                    z = Convert.ToDouble(Console.ReadLine());
+                    Console.Clear();
+                    if (z != 1){
+                        Console.WriteLine("Erro!");
+                    }else{
+                        w = false;
+                    }
+                }
                 break;
             case 5:
                 Console.WriteLine("Você escolheu sair. Saindo...");
