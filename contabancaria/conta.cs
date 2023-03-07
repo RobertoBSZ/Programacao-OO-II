@@ -44,24 +44,24 @@ class Conta{
     
     public double Sacar (double a){
         if(Saldo < a){
-            this.extrato.Add("Saque de R$ "+ a + " mal-sucedido");
+            this.extrato.Add("Saque de R"+ a.ToString("C") + " mal-sucedido");
             Console.WriteLine("Você possui saldo insuficiente. Saque mal-sucedido.\n");
             return this.Saldo;
         }
         else{
-            this.extrato.Add("Saque de R$ "+ a + " realizado com sucesso!");
+            this.extrato.Add("Saque de R"+ a.ToString("C") + " realizado com sucesso!");
             return this.Saldo = Saldo - a;
         }
     }
     
     public double Depositar(double a){
         if(a <= 0){
-            this.extrato.Add("Depósito de R$ "+ a +" mal-sucedido");
+            this.extrato.Add("Depósito de R"+ a.ToString("C") +" mal-sucedido");
             Console.WriteLine("Este depósito é insuficiente. Deposito mal-sucedido.\n");
             return this.Saldo;
         }
         else{
-            this.extrato.Add("Depósito de R$ "+ a +" realizado com sucesso!");
+            this.extrato.Add("Depósito de R"+ a.ToString("C") +" realizado com sucesso!");
             return this.Saldo = this.Saldo + a;
         }
     }

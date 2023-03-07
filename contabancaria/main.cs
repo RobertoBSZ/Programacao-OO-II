@@ -35,7 +35,7 @@ class HelloWorld {
     Console.WriteLine("CPF: " + cliente1.Cpf);
     Console.WriteLine("Nome: " + cliente1.Name);
     
-    Console.WriteLine("\nOlá " + cliente1.Name + ", inscrito no CPF " + cliente1.Cpf + ", seu saldo inicial é de R$1000,00.\n");
+    Console.WriteLine("\nOlá " + cliente1.Name + ", inscrito no CPF " + cliente1.Cpf + ", seu saldo inicial é de R" + cliente1.Saldo.ToString("C") + ".");
     
     
     while(opcao_menu == true){
@@ -49,7 +49,7 @@ class HelloWorld {
         else{
             switch(operacaouser){
             case 1:
-                Console.WriteLine("\nSaldo atual: R$" + cliente1.GetSaldo());
+                Console.WriteLine("\nSaldo atual: R" + cliente1.GetSaldo().ToString("C"));
                 break;
             case 2:
                 double x;
@@ -57,15 +57,15 @@ class HelloWorld {
                 x = Convert.ToDouble(Console.ReadLine());
                 cliente1.Sacar(x);
                 
-                Console.WriteLine("Saldo atual: R$" + cliente1.GetSaldo());
+                Console.WriteLine("Saldo atual: R" + cliente1.GetSaldo().ToString("C"));
                 break;
             case 3:
                 double y;
-                Console.WriteLine("\nQuanto você quer depositar?\n");
+                Console.WriteLine("\nQuanto você quer depositar?");
                 y = Convert.ToDouble(Console.ReadLine());
                 cliente1.Depositar(y);
                 
-                Console.WriteLine("Saldo atual: R$" + cliente1.GetSaldo());
+                Console.WriteLine("Saldo atual: R" + cliente1.GetSaldo().ToString("C"));
                 break;
             
             case 4:
