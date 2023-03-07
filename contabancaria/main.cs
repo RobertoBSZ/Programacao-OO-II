@@ -26,10 +26,12 @@ class HelloWorld {
     Console.WriteLine("Cadastro de informações pessoais");
     Console.WriteLine("\nDigite o seu CPF:");
     cliente1.GetSetCpf = Console.ReadLine();
+    Console.Clear();
     
     
-    Console.WriteLine("\nDigite o seu nome:");
+    Console.WriteLine("Digite o seu nome:");
     cliente1.GetSetName = Console.ReadLine();
+    Console.Clear();
     
     Console.WriteLine("\nConfirmação de suas informações\n");
     Console.WriteLine("CPF: " + cliente1.Cpf);
@@ -42,6 +44,7 @@ class HelloWorld {
         Console.WriteLine("\nEscolha sua operação bancária:\n1-Consultar\n2-Sacar\n3-Depositar\n4-Extrato\n5-Sair");
         Console.WriteLine("\nSua escolha:");
         operacaouser = Convert.ToInt32(Console.ReadLine());
+        Console.Clear();
         
         if(operacaouser <=0 || operacaouser >5){
             Console.WriteLine("Escolha um número dentre as opções!");

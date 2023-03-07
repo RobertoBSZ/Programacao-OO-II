@@ -50,6 +50,7 @@ class Conta{
         }
         else{
             this.extrato.Add("Saque de R"+ a.ToString("C") + " realizado com sucesso!");
+            Console.WriteLine("Saque de R"+ a.ToString("C") + " realizado com sucesso!");
             return this.Saldo = Saldo - a;
         }
     }
@@ -62,6 +63,7 @@ class Conta{
         }
         else{
             this.extrato.Add("Depósito de R"+ a.ToString("C") +" realizado com sucesso!");
+            Console.WriteLine("Depósito de R"+ a.ToString("C") +" realizado com sucesso!");
             return this.Saldo = this.Saldo + a;
         }
     }
